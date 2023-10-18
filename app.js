@@ -19,16 +19,19 @@ app.get("/", (req, res) => {
   res.render("index");
 });
 
-app.post("/room", (req, res) => {
+app.post("/chat", (req, res) => {
   const { username, roomname } = req.body;
-  res.redirect(`/room?username=${username}&roomname=${roomname}`);
+  res.redirect(`/chat?username=${username}&roomname=${roomname}`);
 });
 
-app.get("/room", (req, res) => {
-  res.render("room");
+app.get("/chat", (req, res) => {
+  res.render("chat");
 });
 
 const port = process.env.PORT;
-app.listen(port, () => {
-  console.log(`Server is running on port ${port}`);
+const server = app.listen(port, () => {
+  console.log(`Server Running on port http://localhost:${port}`);
 });
+
+const io = socket(server);
+require("./functions/socket")(io);
