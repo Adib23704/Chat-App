@@ -8,24 +8,27 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.7.2/socket.io.js" integrity="sha512-zoJXRvW2gC8Z0Xo3lBbao5+AS3g6YWr5ztKqaicua11xHo+AvE1b0lT9ODgrHTmNUxeCw0Ry4BGRYZfXu70weg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </head>
 <body>
-    <header class="chat-header">
-        <h1 class="room-message">Welcome to the Chat Room</h1>
-    </header>
-    <div class="window">
-        <div class="chat-message">
-            <div id="output"></div>
-            <div id="feedback"></div>
+    <div class="container">
+        <div class="sidebar">
+            <h2 class="users-online">Users Online</h2>
+            <ul class="users">
+                <!-- List of online users goes here -->
+            </ul>
         </div>
-        <div class="input-container">
-            <input type="text" id="message" placeholder="Enter your message">
-            <button id="send" class="animated fadeInUp gradient-button">Send</button>
+        <div class="main-content">
+            <header class="chat-header">
+                <h1 class="room-message">Welcome to the Chat Room</h1>
+                <button id="exit-room" class="exit-button">Exit Room</button>
+            </header>
+            <div class="chat-message">
+                <div id="output"></div>
+                <div id="feedback"></div>
+            </div>
+            <div class="input-container">
+                <input type="text" id="message" placeholder="Enter your message">
+                <button id="send" class="animated fadeInUp gradient-button" disabled>Send</button>            
+            </div>
         </div>
-    </div>
-    <div class="online">
-        <h2 class="users-online">Users Online</h2>
-        <ul class="users">
-            <!-- User list goes here -->
-        </ul>
     </div>
     <script src="/script.js"></script>
 </body>
