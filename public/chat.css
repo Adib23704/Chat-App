@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&family=Roboto:wght@300&display=swap');
 
 body {
-  background: #f0f0f0; /* Softer background */
+  background: #373737; /* Softer background */
   font-family: 'Roboto', sans-serif;
   display: flex;
   flex-direction: column;
@@ -10,6 +10,11 @@ body {
   justify-content: center;
   min-height: 100vh;
   margin: 0;
+  overflow: hidden; /* Prevent body from showing a scrollbar */
+}
+
+h1 {
+  margin-block-end: 25px;
 }
 
 .container {
@@ -36,6 +41,8 @@ body {
   padding: 20px;
   flex: 1; /* Fill remaining space */
   max-width: 80%; /* Adjust the maximum width as needed */
+  display: flex;
+  flex-direction: column; /* Make the chat area a flex container */
 }
 
 /* Chat header styles */
@@ -51,7 +58,9 @@ body {
 
 /* Chat message styles */
 .chat-message {
-  /* Add your chat message styles here */
+  flex: 1; /* Allow the chat area to take up remaining space */
+  max-height: 400px; /* Set a maximum height for the chat area */
+  overflow-y: auto; /* Enable scrolling for the chat area */
 }
 
 /* Input container styles */
