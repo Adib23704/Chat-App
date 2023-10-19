@@ -2,19 +2,69 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&family=Roboto:wght@300&display=swap');
 
 body {
-  background: #373737; /* Softer background */
-  font-family: 'Roboto', sans-serif;
+  font-family: "Poppins", sans-serif;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   min-height: 100vh;
-  margin: 0;
   overflow: hidden; /* Prevent body from showing a scrollbar */
+  animation: colorchange 20s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-play-state: running;
+}
+
+@keyframes colorchange {
+  0% {
+    background: #bc0000;
+  }
+
+  14% {
+    background: #ce8600;
+  }
+
+  28% {
+    background: #c9c900;
+  }
+
+  42% {
+    background: #007300;
+  }
+
+  56% {
+    background: #0000c6;
+  }
+
+  70% {
+    background: #4d0183;
+  }
+
+  84% {
+    background: #b463b4;
+  }
+
+  100% {
+    background: #bc0000;
+  }
+}
+
+/* Add a media query for responsive design */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column; /* Stack sidebar and main content on smaller screens */
+  }
+
+  .sidebar {
+    width: 100%; /* Take the full width on smaller screens */
+    min-width: 0; /* Remove minimum width for the sidebar */
+    height: auto; /* Adjust height for dynamic content */
+  }
 }
 
 h1 {
   margin-block-end: 25px;
+  font-weight: unset;
 }
 
 .container {
@@ -24,7 +74,7 @@ h1 {
 }
 
 .sidebar {
-  background: #fff;
+  background: #424242;
   border-radius: 20px;
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
   padding: 20px;
@@ -35,7 +85,7 @@ h1 {
 }
 
 .main-content {
-  background: #fff;
+  background: #424242;
   border-radius: 20px;
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
   padding: 20px;
@@ -61,6 +111,7 @@ h1 {
   flex: 1; /* Allow the chat area to take up remaining space */
   max-height: 400px; /* Set a maximum height for the chat area */
   overflow-y: auto; /* Enable scrolling for the chat area */
+  color: #f0f0f0;
 }
 
 /* Input container styles */
@@ -72,13 +123,13 @@ h1 {
 input[type="text"] {
   flex: 1;
   padding: 15px;
-  border: 2px solid #ccc;
+  border: 2px solid #424242;
   border-radius: 20px;
   font-size: 18px;
   margin-right: 10px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  background: #f6f6f6;
-  color: #333;
+  background: #424242;
+  color: #f0f0f0;
 }
 
 button#send {
@@ -109,12 +160,17 @@ button#send:active {
   color: #8e2de2; /* Accent color for the title */
   font-size: 24px; /* Larger font size */
   margin-bottom: 10px;
+  font-weight: 600  ;
 }
 
 .users {
   list-style-type: none;
   padding: 0;
   margin: 0;
+  flex: 1; /* Allow the chat area to take up remaining space */
+  max-height: 400px; /* Set a maximum height for the chat area */
+  overflow-y: auto; /* Enable scrolling for the chat area */
+  color: #f0f0f0;
 }
 
 .users li {
@@ -157,6 +213,7 @@ button#send:active {
   padding: 12px 24px;
   border: none;
   border-radius: 30px;
+  font-weight: 550;
   font-size: 16px;
   cursor: pointer;
   transition: background 0.3s, transform 0.2s; /* Transition on hover */
@@ -170,4 +227,31 @@ button#send:active {
 
 .exit-button:active {
   transform: scale(0.95);
+}
+
+.credit {
+  position: fixed;
+  bottom: 10px;
+  left: 5%;
+  transform: translateX(-50%);
+  font-size: 12px;
+  color: rgba(0, 0, 0, 0.7);
+  background-color: rgba(255, 255, 255, 0.442);
+  padding: 3px 6px;
+  border-radius: 3px;
+  backdrop-filter: blur(5px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease, transform 0.3s ease, color 0.3s ease;
+  font-weight: 550;
+}
+
+.credit a {
+  text-decoration: none;
+  color: #0453a9;
+}
+
+.credit:hover {
+  background-color: rgba(255, 255, 255, 0.5);
+  color: rgba(0, 0, 0, 0.9);
+  transform: translateX(-50%) scale(1.18);
 }

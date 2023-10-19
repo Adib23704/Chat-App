@@ -14,7 +14,7 @@ const urlParams = new URLSearchParams(queryString);
 const username = urlParams.get("username");
 const roomname = urlParams.get("roomname");
 
-roomMessage.innerHTML = `Connected in room ${roomname}`;
+roomMessage.innerHTML = `Connected in room <b>${roomname}</b>`;
 
 socket.emit("joined-user", {
   username,
@@ -29,6 +29,7 @@ send.addEventListener("click", () => {
       roomname,
     });
     message.value = "";
+    message.focus();
     send.setAttribute("disabled", "true");
   }
 });
@@ -44,6 +45,14 @@ exitButton.addEventListener("click", () => {
 message.addEventListener("keypress", () => {
   socket.emit("typing", { username, roomname });
 });
+
+message.addEventListener("keyup", (event) => {
+  event.preventDefault();
+  if (event.key === 'Enter') {
+    send.click(); // Trigger a click on the "Send" button
+  }
+});
+
 
 socket.on("joined-user", (data) => {
   output.innerHTML += `<p>--> <strong><em>${data.username} </strong>has Joined the Room</em></p>`;
@@ -70,7 +79,7 @@ socket.on("typing", (user) => {
 socket.on("online-users", (data) => {
   users.innerHTML = "";
   data.forEach((user) => {
-    users.innerHTML += `<p>${user}</p>`;
+    users.innerHTML += `<p>- ${user}</p>`;
   });
 });
 
@@ -81,3 +90,5 @@ message.addEventListener("input", () => {
     send.setAttribute("disabled", "true");
   }
 });
+
+

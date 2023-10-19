@@ -6,7 +6,7 @@
     <title>Chat App</title>
     <link rel="stylesheet" href="/chat.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.7.2/socket.io.js" integrity="sha512-zoJXRvW2gC8Z0Xo3lBbao5+AS3g6YWr5ztKqaicua11xHo+AvE1b0lT9ODgrHTmNUxeCw0Ry4BGRYZfXu70weg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-</head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" /></head>
 <body>
     <div class="container">
         <div class="sidebar">
@@ -18,17 +18,20 @@
         <div class="main-content">
             <header class="chat-header">
                 <h1 class="room-message">Welcome to the Chat Room</h1>
-                <button id="exit-room" class="exit-button">Exit Room</button>
+                <button title="Exit the room" id="exit-room" class="exit-button"><i class="fas fa-sign-out"></i></button>
             </header>
             <div class="chat-message">
                 <div id="output"></div>
                 <div id="feedback"></div>
             </div>
             <div class="input-container">
-                <input type="text" id="message" placeholder="Enter your message">
-                <button id="send" class="animated fadeInUp gradient-button" disabled>Send</button>            
+                <input type="text" id="message" placeholder="Enter your message" autofocus>
+                <button id="send" class="animated fadeInUp gradient-button" disabled><i class="fas fa-paper-plane"></i></button>            
             </div>
         </div>
+    </div>
+    <div class="credit">
+        <a href="https://adib23704.tk" target="_blank">&copy Adib23704</a> - 2023
     </div>
     <script src="/script.js"></script>
 </body>
