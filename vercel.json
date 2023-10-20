@@ -1,12 +1,5 @@
 {
-  "cleanUrls": true,
-  "functions": {
-    "api/**/*.js": {
-      "memory": 1024,
-      "maxDuration": 10
-    }
-  },
-  "installCommand": "npm install",
-  "public": false,
-  "trailingSlash": false
+  "rewrites": [
+    { "source": "/(.*)", "destination": "/" }
+  ]
 }
