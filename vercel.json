@@ -1,11 +1,7 @@
 {
   "cleanUrls": true,
   "functions": {
-    "api/app.js": {
-      "memory": 1024,
-      "maxDuration": 10
-    },
-    "functions/*.js": {
+    "api/**/*.js": {
       "memory": 1024,
       "maxDuration": 10
     }
