@@ -7,7 +7,7 @@ const users = document.querySelector(".users");
 const exitButton = document.getElementById("exit-room");
 
 // eslint-disable-next-line no-undef
-const socket = io("http://localhost");
+const socket = io("https://chatapp-adib.vercel.app");
 
 const queryString = window.location.search;
 const urlParams = new URLSearchParams(queryString);
