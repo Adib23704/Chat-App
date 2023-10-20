@@ -4,10 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon ./app.js",
-    "format": "prettier --write \"functions/*.*\" \"public/*.*\" \"./app.js\"",
-    "lint": "eslint \"functions/*.*\" \"public/*.js\" \"./app.js\" --fix",
-    "start": "cls && npm run format && cls && npm run lint && cls && node ./app.js"
+    "dev": "nodemon ./index.js",
+    "format": "prettier --write \"functions/*.*\" \"public/*.*\" \"./index.js\"",
+    "lint": "eslint \"functions/*.*\" \"public/*.js\" \"./index.js\" --fix",
+    "start": "cls && npm run format && cls && npm run lint && cls && node ./index.js"
   },
   "keywords": [],
   "author": "Adib23704",
