@@ -1,6 +1,5 @@
 {
   "cleanUrls": true,
-  "framework": "null",
   "functions": {
     "./app.js": {
       "memory": 1024,
