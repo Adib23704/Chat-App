@@ -31,22 +31,25 @@ function connection(io) {
 
     socket.on("exit-room", (data) => {
       const socketId = socket.id;
-      const {username, roomname} = data;
-      
+      const { username, roomname } = data;
+
       console.log("Socket ID:", socketId);
       console.log("Roomname:", roomname);
-    
+
       if (users[roomname]) {
         const userIndex = users[roomname].findIndex((user) => user[socketId]);
         console.log("User Index:", userIndex);
-        
+
         if (userIndex !== -1) {
           users[roomname].splice(userIndex, 1);
           io.to(roomname).emit("online-users", getUsers(users[roomname]));
-          io.to(roomname).emit("exit-message", { username, message: "has left the room." });
+          io.to(roomname).emit("exit-message", {
+            username,
+            message: "has left the room.",
+          });
         }
       }
-    });    
+    });
   });
 }
 

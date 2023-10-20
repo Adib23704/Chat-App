@@ -38,7 +38,7 @@ exitButton.addEventListener("click", () => {
   window.location.href = "/";
   socket.emit("exit-room", {
     username,
-    roomname
+    roomname,
   });
 });
 
@@ -48,11 +48,10 @@ message.addEventListener("keypress", () => {
 
 message.addEventListener("keyup", (event) => {
   event.preventDefault();
-  if (event.key === 'Enter') {
+  if (event.key === "Enter") {
     send.click(); // Trigger a click on the "Send" button
   }
 });
-
 
 socket.on("joined-user", (data) => {
   output.innerHTML += `<p>--> <strong><em>${data.username} </strong>has Joined the Room</em></p>`;
@@ -61,7 +60,8 @@ socket.on("joined-user", (data) => {
 socket.on("exit-message", (data) => {
   if (data.username !== username) {
     output.innerHTML += `<p><strong>${data.username}</strong> ${data.message}</p>`;
-    document.querySelector(".chat-message").scrollTop = document.querySelector(".chat-message").scrollHeight;
+    document.querySelector(".chat-message").scrollTop =
+      document.querySelector(".chat-message").scrollHeight;
   }
 });
 
@@ -90,5 +90,3 @@ message.addEventListener("input", () => {
     send.setAttribute("disabled", "true");
   }
 });
-
-

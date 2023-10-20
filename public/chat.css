@@ -1,5 +1,5 @@
 /* Add a custom font for a more modern look */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&family=Roboto:wght@300&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300&family=Roboto:wght@300&display=swap");
 
 body {
   font-family: "Poppins", sans-serif;
@@ -140,7 +140,9 @@ button#send {
   border-radius: 20px;
   font-size: 18px;
   cursor: pointer;
-  transition: background 0.3s, transform 0.2s; /* Slightly slower transition */
+  transition:
+    background 0.3s,
+    transform 0.2s; /* Slightly slower transition */
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2); /* Slightly more prominent shadow */
   margin: 0px 0px 0px 20px;
 }
@@ -160,7 +162,7 @@ button#send:active {
   color: #8e2de2; /* Accent color for the title */
   font-size: 24px; /* Larger font size */
   margin-bottom: 10px;
-  font-weight: 600  ;
+  font-weight: 600;
 }
 
 .users {
@@ -194,7 +196,7 @@ button#send:active {
 
 /* Apply the gradient animation to the button */
 .gradient-button {
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   animation: gradientBG 3s ease infinite;
 }
 
@@ -208,7 +210,11 @@ button#send:active {
 }
 
 .exit-button {
-  background: linear-gradient(45deg, #ff3366, #ff9900); /* Gradient background */
+  background: linear-gradient(
+    45deg,
+    #ff3366,
+    #ff9900
+  ); /* Gradient background */
   color: #fff;
   padding: 12px 24px;
   border: none;
@@ -216,7 +222,9 @@ button#send:active {
   font-weight: 550;
   font-size: 16px;
   cursor: pointer;
-  transition: background 0.3s, transform 0.2s; /* Transition on hover */
+  transition:
+    background 0.3s,
+    transform 0.2s; /* Transition on hover */
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
@@ -241,7 +249,10 @@ button#send:active {
   border-radius: 3px;
   backdrop-filter: blur(5px);
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  transition: background-color 0.3s ease, transform 0.3s ease, color 0.3s ease;
+  transition:
+    background-color 0.3s ease,
+    transform 0.3s ease,
+    color 0.3s ease;
   font-weight: 550;
 }
 
